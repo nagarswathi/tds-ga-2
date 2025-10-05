@@ -1,27 +1,19 @@
-# A simple workflow to demonstrate a custom step name.
-name: CI
+name: Workflow with Email Identifier
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  
-  # Allows you to run this workflow manually from the Actions tab
+  # Runs when manually triggered
   workflow_dispatch:
+  # Also runs on push to main branch
+  push:
+    branches: [ main ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  hello-world:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    
     steps:
-      # A step with a name containing the required email address
-      - name: "21f1000509@ds.study.iitm.ac.in"
-        run: echo "This step is being checked by the grader!"
-
-      - name: A second step
+      - name: 21f1000509@ds.study.iitm.ac.in
         run: echo "Hello, world!"
+        
+      - name: Display date
+        run: date
